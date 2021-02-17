@@ -1,0 +1,30 @@
+<header class='home-header'>
+  <div class="heading">
+    <%= link_to 'Hooome🏠', "#", class: "title" %>
+  </div>
+  <div class= "search-form">
+    <%= form_with(url: "#", local: true, method: :get) do |form| %>
+      <%= form.text_field :keyword, placeholder: " 掲示板を探す", class: "input-box" %>
+      <%= form.submit "検索" ,class:"btn" %>
+    <% end %>
+  </div>
+  <div class="menu">
+  <% i = 1%>
+    <% if i == 1 %>
+      <span class="menu_text"><%= "ユーザー名" %>
+        <ul class="menu_list">
+          <li><%= link_to "マイページ", "#", class: "menu_lists" %></br></li>
+          <li><%= link_to "掲示板作成", "#", class: "menu_lists" %></br></li>
+          <li><%= link_to "ログアウト", "#", class: "menu_lists" %></br></li>
+        </ul>
+      </span>
+    <% else %>
+      <span class="menu_text"><%= "アカウント" %>
+        <ul class="menu_list">
+          <li><%= link_to "新規作成", "#", class: "menu_lists" %></br></li>
+          <li><%= link_to "ログイン", "#", class: "menu_lists" %></br></li>
+        </ul>
+      </span>
+    <%end%>
+  </div>
+</header>

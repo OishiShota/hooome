@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+.home-header {
+  position: fixed;
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  padding: 10px 10vw;
+  z-index: 99;
+  display: flex;
+  background-color: #5a5158;
+}
+
+.heading {
+  height: 100%;
+  margin-right: 50px;
+}
+
+.title {
+  font-size: 20px;
+  text-decoration: none;
+  color: #d8f2da;
+  font-weight: 600;
+}
+
+.title:hover {
+  color: #d8f0f2;
+}
+
+.search-form {
+  height: 100%;
+  display: flex;
+}
+
+.input-box {
+  font-weight: 600;
+  background-color: #d8f2da;
+  color: #5a5158;
+  width: 25vw;
+}
+
+.btn {
+  color: #5a5158;
+  background-color: #d8f2da;
+  font-weight: 600;
+}
+
+.menu {
+  height: 100%;
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+.menu_text {
+  font-size: 20px;
+  display: block;
+  color: #d8f2da;
+  font-weight: 600;
+  border: solid 1px #d8f2da;
+  margin-right: 10px;
+  padding: 0 10px;
+  text-align: center;
+  width: 150px;
+}
+
+.menu_list {
+  display: none;
+}
+
+.menu_text:hover {
+  background-color: #d8f2da;
+  color: #5a5158;
+}
+
+.menu_text:hover .menu_list {
+  background-color: #5a5158;
+  display: block;
+  text-align: center;
+}
+
+.menu_lists {
+  color: #d8f2da;
+  text-decoration: none;
+}
+
+.menu_lists:hover {
+  color: #d8f0f2;
+}
+
+
+
+.login_bar {
+  display: block;
+  height: 100%;
+  display: flex;
+}
+
+.login {
+  font-size: 20px;
+  text-decoration: none;
+  color: #d8f2da;
+  font-weight: 600;
+  border: solid 1px #d8f2da;
+  padding: 0 5px;
+}
+
+.login:hover {
+  background-color: #d8f0f2;
+  color: #5a5158;
+}
