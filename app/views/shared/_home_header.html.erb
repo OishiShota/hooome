@@ -1,6 +1,6 @@
 <header class='home-header'>
   <div class="heading">
-    <%= link_to 'Hooome🏠', "#", class: "title" %>
+    <%= link_to 'Hooome🏠', root_path, class: "title" %>
   </div>
   <div class= "search-form">
     <%= form_with(url: "#", local: true, method: :get) do |form| %>
@@ -9,20 +9,19 @@
     <% end %>
   </div>
   <div class="menu">
-  <% i = 1%>
-    <% if i == 1 %>
-      <span class="menu_text"><%= "ユーザー名" %>
+    <% if user_signed_in? %>
+      <span class="menu_text"><%= current_user.name %>
         <ul class="menu_list">
           <li><%= link_to "マイページ", "#", class: "menu_lists" %></br></li>
-          <li><%= link_to "掲示板作成", "#", class: "menu_lists" %></br></li>
-          <li><%= link_to "ログアウト", "#", class: "menu_lists" %></br></li>
+          <li><%= link_to "掲示板作成", new_home_path, class: "menu_lists" %></br></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete ,  class: "menu_lists" %></br></li>
         </ul>
       </span>
     <% else %>
       <span class="menu_text"><%= "アカウント" %>
         <ul class="menu_list">
-          <li><%= link_to "新規作成", "#", class: "menu_lists" %></br></li>
-          <li><%= link_to "ログイン", "#", class: "menu_lists" %></br></li>
+          <li><%= link_to "新規作成", new_user_registration_path, class: "menu_lists" %></br></li>
+          <li><%= link_to "ログイン", new_user_session_path, class: "menu_lists" %></br></li>
         </ul>
       </span>
     <%end%>
