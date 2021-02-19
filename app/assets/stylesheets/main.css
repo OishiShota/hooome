@@ -48,11 +48,37 @@
     margin: 10px 0 20px;
     font-weight: 600;
     font-size: 15px;
+    list-style: square;
+    height: 225px;
+  }
+
+  .lists_index{
+    margin: 10px 0 20px;
+    font-weight: 600;
+    font-size: 15px;
+    list-style: square;
   }
 
   .list{
     font-weight: 300;
-  } 
+    margin: 5px 0 10px 20px;
+    line-height: 15px;
+  }
+
+  .list_name{
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  .list_user{
+    text-decoration: none;
+  }
+
+  .list_info{
+    font-size: 11px;
+    text-decoration: none;
+    margin-right: 15px;
+  }
 
 /* user */
   .user_form{

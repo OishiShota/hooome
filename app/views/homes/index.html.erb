@@ -9,10 +9,17 @@
     <div class='pick_up'>
       <div class='left'>
         <ul class= 'lists'> 新規の掲示板</br>
-          <li class= 'list'>・aaaaaa</li>
-          <li class= 'list'>・掲示板(未実装)</li>
-          <li class= 'list'>・質問箱(未実装)</li>
-          <li class= 'list'>・メール(未実装)</li>
+          <% @new_homes.each do |home| %>
+            <li class= "list">
+              タイトル:
+              <%= link_to home.name, home_path(home.id), method: :get, class: 'list_name' %>
+              </br>
+              <span class="list_info">
+                投稿者:
+                <%= link_to home.user.name, "#", class: "list_user"%>
+              </span>
+            </li>
+          <% end %>
         </ul>
         <ul class= 'lists'> 更新された掲示板</br>
           <li class= 'list'>・aaaaaa</li>
@@ -39,13 +46,26 @@
     <div class='caption'>
     🌟掲示板一覧🌟</br>
     </div>
-    <ul class= 'lists'>
-      <li class= 'list'>・aaaaaa</li>
-      <li class= 'list'>・掲示板(未実装)</li>
-      <li class= 'list'>・質問箱(未実装)</li>
-      <li class= 'list'>・メール(未実装)</li>
+    <ul class= 'lists_index'>
+      <% @all_homes.each do |home| %>
+        <li class= "list">
+          <%= link_to home.name, "#", class: 'list_name' %>
+          </br>
+          <span class="list_info">
+            投稿者:
+            <%= link_to home.user.name, "#", class: "list_user"%>
+          </span>
+          <span class="list_info">
+            投稿:
+            <%= home.created_at %>
+          </span>
+          <span class="list_info">
+            更新:
+            <%= home.updated_at %>
+          </span>
+        </li>
+      <% end %>
     </ul>
   </div>
-
   <%= render "shared/home_footer" %>
 </div>
