@@ -1,7 +1,8 @@
 class HomesController < ApplicationController
   def index
     @new_homes = Home.includes(:user).order("created_at DESC").limit(5)
-    @all_homes = Home.includes(:user).order("created_at DESC")
+    @new_comment_homes = Home.includes(:user).order("updated_at DESC").limit(5)
+    @all_homes = Home.includes(:user).order("updated_at DESC")
   end
 
   def new
