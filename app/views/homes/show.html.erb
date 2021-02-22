@@ -1,7 +1,43 @@
 <div class= 'all'>
   <%= render "shared/home_header" %>
 
-  <div class='main'>
+  <div class='main_show'>
+    <div class='hoom_title'>
+      🌟<%= @home.name %>🌟
+      <span class="side_right">
+        <span class="lists">
+          投稿者:
+          <%= link_to @home.user.name, "#", class: "list_user"%>
+        </span>
+      </span>
+    </div>
+    <div class="comments">
+      <div>
+        1.
+      </div>
+      <div>
+        main</br>
+        main
+      </div>
+    </div>
+    <div class="comments_info">
+      名前 時間
+    </div>
+
+    
+    <div class="comments">
+      <div>
+        1.
+      </div>
+      <div>
+        main</br>
+        main
+      </div>
+    </div>
+    <div class="comments_info">
+      名前 時間
+    </div>
+    
   </div>
-  <%= render "shared/home_footer" %>
+  <%= render "shared/comment_footer" %>
 </div>

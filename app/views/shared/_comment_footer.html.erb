@@ -1,0 +1,13 @@
+<header class='comment-footer'>
+  <div class= "comment-form">
+    <%= form_with(url: "#", local: true, method: :get) do |form| %>
+      <div>
+        <%= form.text_area :keyword, placeholder: "コメントを入力してください",maxlength:"100" , class: "input-area", id: "article_text" %>
+      </div>
+      <div class="count">
+        <span id="char_num">0</span>/100文字
+      </div>
+      <%= form.submit "送信" ,class:"btn" %>
+    <% end %>
+  </div>
+</header>
