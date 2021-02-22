@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :homes
+  has_many :messages
 
   validates :name, presence: true, length: {maximum: 8 }
   validates :address, presence: true, uniqueness: true

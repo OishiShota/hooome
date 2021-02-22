@@ -22,10 +22,11 @@ ActiveRecord::Schema.define(version: 2021_02_19_055444) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment", null: false
-    t.string "home", null: false
+    t.bigint "home_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["home_id"], name: "index_messages_on_home_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -44,5 +45,6 @@ ActiveRecord::Schema.define(version: 2021_02_19_055444) do
   end
 
   add_foreign_key "homes", "users"
+  add_foreign_key "messages", "homes"
   add_foreign_key "messages", "users"
 end
