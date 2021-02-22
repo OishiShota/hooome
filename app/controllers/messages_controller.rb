@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
       redirect_to home_path(@message.home)
     else
       @home = @message.home
+      @messages = @home.messages
       render "homes/show"
     end
   end

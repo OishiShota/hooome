@@ -20,22 +20,9 @@
               </span>
             </li>
           <% end %>
-        </ul>
-        <ul class= 'lists'> 更新された掲示板</br>
-          <li class= 'list'>・aaaaaa</li>
-          <li class= 'list'>・掲示板(未実装)</li>
-          <li class= 'list'>・質問箱(未実装)</li>
-          <li class= 'list'>・メール(未実装)</li>
-        </ul>
       </div>
       <div class='right'>
         <ul class= 'lists'> 閲覧履歴</br>
-          <li class= 'list'>・aaaaaa</li>
-          <li class= 'list'>・掲示板(未実装)</li>
-          <li class= 'list'>・質問箱(未実装)</li>
-          <li class= 'list'>・メール(未実装)</li>
-        </ul>
-        <ul class= 'lists'> お気に入り</br>
           <li class= 'list'>・aaaaaa</li>
           <li class= 'list'>・掲示板(未実装)</li>
           <li class= 'list'>・質問箱(未実装)</li>
@@ -49,11 +36,15 @@
     <ul class= 'lists_index'>
       <% @all_homes.each do |home| %>
         <li class= "list">
-          <%= link_to home.name, "#", class: 'list_name' %>
+          <%= link_to home.name, home_path(home.id), class: 'list_name' %>
           </br>
           <span class="list_info">
             投稿者:
             <%= link_to home.user.name, "#", class: "list_user"%>
+          </span>
+          <span class="list_info">
+            コメント数:
+            <%= home.messages.length %>
           </span>
           <span class="list_info">
             投稿:
@@ -61,7 +52,12 @@
           </span>
           <span class="list_info">
             更新:
-            <%= home.updated_at %>
+            <% if home.messages.length == 0 %>
+              <%= home.created_at %>
+            <% else %>
+              <% message = home.messages.last %>
+              <%= message.created_at %>
+            <% end %>
           </span>
         </li>
       <% end %>

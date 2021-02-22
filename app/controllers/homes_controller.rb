@@ -19,6 +19,7 @@ class HomesController < ApplicationController
 
   def show
     @home = Home.find(params[:id])
+    @messages = @home.messages
     @message = Message.new
   end
 

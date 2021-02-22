@@ -11,33 +11,22 @@
         </span>
       </span>
     </div>
-    <div class="comments">
-      <div>
-        1.
+    <% i = 0 %>
+    <% @messages.each do |message| %>
+      <% i += 1 %>
+      <div class="comments">
+        <div>
+          <%= i %>.
+        </div>
+        <div>
+          <%= simple_format(message.comment) %>
+        </div>
       </div>
-      <div>
-        main</br>
-        main
+      <div class="comments_info">
+        <%= message.user.name %>
+        <%= message.created_at %>
       </div>
-    </div>
-    <div class="comments_info">
-      名前 時間
-    </div>
-
-    
-    <div class="comments">
-      <div>
-        1.
-      </div>
-      <div>
-        main</br>
-        main
-      </div>
-    </div>
-    <div class="comments_info">
-      名前 時間
-    </div>
-    
+    <% end %>
   </div>
   <%= render "shared/comment_footer" %>
 </div>
