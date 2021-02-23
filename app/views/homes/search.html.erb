@@ -1,0 +1,53 @@
+<div class= 'all'>
+  <%= render "shared/home_header" %>
+
+  <div class='main'>
+    <% if params[:keyword].start_with?("@") %>
+      <div class='caption'>
+      ユーザー検索結果(<%= @keys.length %>件)
+      </div>
+      <div class= 'user_info'>
+        <ul class= 'lists_index'>
+          <% @keys.reverse_each do |user| %>
+            <li class= "list">
+              <%= link_to user.name, user_path(user.id), class: 'list_name' %>
+              </br>
+              <span class="list_info">
+                address:
+                <%= user.address %>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <div class='caption'>
+      掲示板検索結果(<%= @keys.length %>件)
+      </div>
+      <div class= 'user_info'>
+        <ul class= 'lists_index'>
+          <% @keys.reverse_each do |home| %>
+            <li class= "list">
+              <%= link_to home.name, home_path(home.id), class: 'list_name' %>
+              </br>
+              <span class="list_info">
+                コメント数:
+                <%= home.messages.length %>
+              </span>
+              <span class="list_info">
+                投稿:
+                <%= home.created_at %>
+              </span>
+              <span class="list_info">
+                更新:
+                <%= home.updated_at %>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render "shared/home_footer" %>
+</div>

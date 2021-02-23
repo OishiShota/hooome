@@ -26,6 +26,14 @@ class HomesController < ApplicationController
     @message = Message.new
   end
 
+  def search
+    unless params[:keyword] == ""
+      @keys = SearchHomesService.search(params[:keyword])
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def home_params
