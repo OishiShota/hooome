@@ -19,6 +19,15 @@
     font-weight: 600;
   }
 
+  .main_show{
+    padding: 60px 5vw 120px;
+    width: 100%;
+    font-size: 20px;
+    color: #5a5158;
+    background-color: #d8f2da;
+    font-weight: 600;
+  }
+
   .f_input-box{
     width: 200px;
   }
@@ -48,11 +57,37 @@
     margin: 10px 0 20px;
     font-weight: 600;
     font-size: 15px;
+    list-style: square;
+    height: 225px;
+  }
+
+  .lists_index{
+    margin: 10px 0 20px;
+    font-weight: 600;
+    font-size: 15px;
+    list-style: square;
   }
 
   .list{
     font-weight: 300;
-  } 
+    margin: 5px 0 10px 20px;
+    line-height: 15px;
+  }
+
+  .list_name{
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  .list_user{
+    text-decoration: none;
+  }
+
+  .list_info{
+    font-size: 11px;
+    text-decoration: none;
+    margin-right: 15px;
+  }
 
 /* user */
   .user_form{
@@ -72,4 +107,34 @@
 
   .actions{
     margin-top: 10ox;
+  }
+
+/* comment */
+  .side_right{
+    right: 0;
+  }
+
+  .hoom_title{
+    margin: 10px 0;
+    border-bottom: solid 2px #5a5158;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .comments{
+    font-size: 15px;
+    font-weight: 300;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .comments_info{
+    font-size: 11px;
+    font-weight: 300;
+    text-align: right;
+  }
+
+  .user_info{
+    font-size: 15px;
+    margin: 10px;
   }

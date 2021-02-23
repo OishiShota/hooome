@@ -1,0 +1,20 @@
+<header class='comment-footer'>
+  <div class= "comment-form">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@home, @message], local: true) do |form| %>
+        <div>
+          <%= form.text_area :comment, placeholder: "コメントを入力してください",maxlength:"100" , class: "input-area", id: "article_text", rows: "2" %>
+        </div>
+        <div class="count">
+          <span id="char_num">0</span>/100文字
+        </div>
+        <%= form.submit "送信" ,class:"btn" %>
+      <% end %>
+    <% else %>
+      </br>
+      ログインしないと掲示板に参加できません。</br>
+      参加希望の方は右上の「アカウント」から
+      「ユーザー作成」または「ログイン」を行なってください.
+    <% end %>
+  </div>
+</header>

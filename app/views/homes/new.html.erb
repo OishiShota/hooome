@@ -1,0 +1,22 @@
+<div class= 'all'>
+  <%= render "shared/home_header" %>
+
+  <div class='main'>
+    掲示板作成
+    <%= form_with model: @home, class: 'user_form', local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="field">
+        <div>
+          <%= f.label :name %>
+        </div>
+        <%= f.text_field :name, autofocus: true, placeholder: "40字以内でタイトルを入力してください", maxlength:"40"%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "投稿する" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render "shared/home_footer" %>
+</div>

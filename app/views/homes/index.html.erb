@@ -1,0 +1,76 @@
+<div class= 'all'>
+  <%= render "shared/home_header" %>
+
+  <div class='main'>
+    掲示板サイト「Hooome🏠」へようこそ！🎉</br>
+    <div class='caption'>
+    🌟ピックアップ🌟
+    </div>
+    <div class='pick_up'>
+      <div class='left'>
+        <ul class= 'lists'> 新規掲示板</br>
+          <% @new_homes.each do |home| %>
+            <li class= "list">
+              <%= link_to home.name, home_path(home.id), method: :get, class: 'list_name' %>
+              </br>
+              <span class="list_info">
+                投稿者:
+                <%= link_to home.user.name, user_path(home.user.id), class: "list_user"%>
+              </span>
+              <span class="list_info">
+                投稿:
+                <%= home.created_at %>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class='right'>
+        <ul class= 'lists'> 新規更新</br>
+          <% @new_comment_homes.each do |home| %>
+            <li class= "list">
+              <%= link_to home.name, home_path(home.id), method: :get, class: 'list_name' %>
+              </br>
+              <span class="list_info">
+                投稿者:
+                <%= link_to home.user.name, user_path(home.user.id), class: "list_user"%>
+              </span>
+              <span class="list_info">
+                更新:
+                <%= home.updated_at %>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class='caption'>
+    🌟掲示板一覧🌟
+    </div>
+    <ul class= 'lists_index'>
+      <% @all_homes.each do |home| %>
+        <li class= "list">
+          <%= link_to home.name, home_path(home.id), class: 'list_name' %>
+          </br>
+          <span class="list_info">
+            投稿者:
+            <%= link_to home.user.name, user_path(home.user.id), class: "list_user"%>
+          </span>
+          <span class="list_info">
+            コメント数:
+            <%= home.messages.length %>
+          </span>
+          <span class="list_info">
+            投稿:
+            <%= home.created_at %>
+          </span>
+          <span class="list_info">
+            更新:
+            <%= home.updated_at %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= render "shared/home_footer" %>
+</div>

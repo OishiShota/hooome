@@ -1,0 +1,32 @@
+<div class= 'all'>
+  <%= render "shared/home_header" %>
+
+  <div class='main_show'>
+    <div class='hoom_title'>
+      🌟<%= @home.name %>🌟
+      <span class="side_right">
+        <span class="lists">
+          投稿者:
+          <%= link_to @home.user.name, "#", class: "list_user"%>
+        </span>
+      </span>
+    </div>
+    <% i = 0 %>
+    <% @messages.each do |message| %>
+      <% i += 1 %>
+      <div class="comments">
+        <div>
+          <%= i %>.
+        </div>
+        <div>
+          <%= simple_format(message.comment) %>
+        </div>
+      </div>
+      <div class="comments_info">
+        <%= message.user.name %>
+        <%= message.created_at %>
+      </div>
+    <% end %>
+  </div>
+  <%= render "shared/comment_footer" %>
+</div>
