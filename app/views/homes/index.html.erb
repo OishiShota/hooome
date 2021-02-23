@@ -15,7 +15,7 @@
               </br>
               <span class="list_info">
                 投稿者:
-                <%= link_to home.user.name, "#", class: "list_user"%>
+                <%= link_to home.user.name, user_path(home.user.id), class: "list_user"%>
               </span>
               <span class="list_info">
                 投稿:
@@ -33,7 +33,7 @@
               </br>
               <span class="list_info">
                 投稿者:
-                <%= link_to home.user.name, "#", class: "list_user"%>
+                <%= link_to home.user.name, user_path(home.user.id), class: "list_user"%>
               </span>
               <span class="list_info">
                 更新:
@@ -54,7 +54,7 @@
           </br>
           <span class="list_info">
             投稿者:
-            <%= link_to home.user.name, "#", class: "list_user"%>
+            <%= link_to home.user.name, user_path(home.user.id), class: "list_user"%>
           </span>
           <span class="list_info">
             コメント数:

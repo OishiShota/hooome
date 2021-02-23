@@ -133,3 +133,8 @@
     font-weight: 300;
     text-align: right;
   }
+
+  .user_info{
+    font-size: 15px;
+    margin: 10px;
+  }

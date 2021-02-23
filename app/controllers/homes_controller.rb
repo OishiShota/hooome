@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @new_homes = Home.includes(:user).order("created_at DESC").limit(5)
     @new_comment_homes = Home.includes(:user).order("updated_at DESC").limit(5)
@@ -25,8 +27,15 @@ class HomesController < ApplicationController
   end
 
   private
+
   def home_params
     params.require(:home).permit(:name).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
 
