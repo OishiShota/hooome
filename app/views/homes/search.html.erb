@@ -4,7 +4,7 @@
   <div class='main'>
     <% if params[:keyword].start_with?("@") %>
       <div class='caption'>
-      ユーザー検索結果
+      ユーザー検索結果(<%= @keys.length %>件)
       </div>
       <div class= 'user_info'>
         <ul class= 'lists_index'>
@@ -22,7 +22,7 @@
       </div>
     <% else %>
       <div class='caption'>
-      掲示板検索結果
+      掲示板検索結果(<%= @keys.length %>件)
       </div>
       <div class= 'user_info'>
         <ul class= 'lists_index'>
