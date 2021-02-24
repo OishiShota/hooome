@@ -3,38 +3,59 @@
 
   <div class='main'>
     <div class='caption'>
-    <% if user_signed_in? && current_user.id == @user.id %>
-      マイページ
-    <% else %>
-      <%= @user.name%>さんのマイページ
-    <% end %>
+      <% if user_signed_in? && current_user.id == @user.id %>
+        マイページ
+      <% else %>
+        <%= @user.name%>さんのマイページ
+      <% end %>
     </div>
     <div class= 'user_info'>
       ユーザーアドレス:
       <%= @user.address%>
     </div>
-    <div class= 'user_info'>
-      作成した掲示板
-      <ul class= 'lists_index'>
-        <% @user.homes.order(:updated_at) .reverse_each do |home| %>
-          <li class= "list">
-            <%= link_to home.name, home_path(home.id), class: 'list_name' %>
-            </br>
-            <span class="list_info">
-              コメント数:
-              <%= home.messages.length %>
-            </span>
-            <span class="list_info">
-              投稿:
-              <%= home.created_at %>
-            </span>
-            <span class="list_info">
-              更新:
-              <%= home.updated_at %>
-            </span>
-          </li>
-        <% end %>
-      </ul>
+    <div class='pick_up'>
+      <div class='left'>
+        <div class= 'user_info'>
+          作成した掲示板
+          <ul class= 'lists_index'>
+            <% @user_homes.each do |home| %>
+              <li class= "list">
+                <%= link_to home.name, home_path(home.id), class: 'list_name' %>
+                </br>
+                <span class="list_info">
+                  コメント数:
+                  <%= home.messages.length %>
+                </span>
+                <span class="list_info">
+                  更新:
+                  <%= home.updated_at %>
+                </span>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class='right'>
+        <div class= 'user_info'>
+          コメントした掲示板
+          <ul class= 'lists_index'>
+            <% @user_message_homes.each do |home| %>
+              <li class= "list">
+                <%= link_to home.name, home_path(home.id), class: 'list_name' %>
+                </br>
+                <span class="list_info">
+                  コメント数:
+                  <%= home.messages.length %>
+                </span>
+                <span class="list_info">
+                  更新:
+                  <%= home.updated_at %>
+                </span>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 

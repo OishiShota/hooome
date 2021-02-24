@@ -42,7 +42,6 @@
   .pick_up{
     display: flex;
     margin: 10px 0 20px;
-    font-weight: 300;
   }
 
   .left{
