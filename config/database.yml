@@ -51,4 +51,4 @@ production:
   <<: *default
   database: hooome_production
   username: hooome
-  password: <%= ENV['hooome_DATABASE_PASSWORD'] %>
+  password: <%= ENV['HOOOME_DATABASE_PASSWORD'] %>
