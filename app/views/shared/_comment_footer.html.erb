@@ -2,9 +2,18 @@
   <div class= "comment-form">
     <% if user_signed_in? %>
       <%= form_with(model: [@home, @message], local: true) do |form| %>
-        <div>
-          <%= form.text_area :comment, placeholder: "コメントを入力してください",maxlength:"100" , class: "input-area", id: "article_text", rows: "2" %>
+        <div class="form-area">
+          <div>
+            <%= form.text_area :comment, placeholder: "コメントを入力してください",maxlength:"100" , class: "input-area", id: "article_text", rows: "2" %>
+          </div>
+          <div>
+            <label class="photo">
+              <span>画像</span>
+              <%= form.file_field :image, class: 'hidden' %>
+            </label>
+          </div>
         </div>
+
         <div class="count">
           <span id="char_num">0</span>/100文字
         </div>

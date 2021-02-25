@@ -35,10 +35,34 @@
   font-size: 11px;
 }
 
+.form-area{
+  width: 80%;
+  margin: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .input-area {
   font-weight: 600;
   background-color: #d8f2da;
   color: #5a5158;
-  width: 80vw;
-  margin: 0 20px;
+  width: 70vw;
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.photo{
+  margin-right: 10px;
+  height: 50px;
+  padding: 5px 10px;
+  border: #d8f2da 1px solid;
+}
+
+.photo:hover{
+  color: #d8f0f2;
+  border: #d8f0f2 1px solid;
 }

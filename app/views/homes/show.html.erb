@@ -22,6 +22,9 @@
           <%= simple_format(message.comment) %>
         </div>
       </div>
+      <div class = "message-image">
+        <%= image_tag message.image.variant(resize: '500x500') if message.image.attached? %>
+      </div>
       <div class="comments_info">
         <%= message.user.name %>
         <%= message.created_at %>
