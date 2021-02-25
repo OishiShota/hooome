@@ -7,7 +7,7 @@
       <span class="side_right">
         <span class="lists">
           投稿者:
-          <%= link_to @home.user.name, "#", class: "list_user"%>
+          <%= link_to @home.user.name, user_path(@home.user.id), class: "list_user"%>
         </span>
       </span>
     </div>
@@ -26,7 +26,7 @@
         <%= image_tag message.image.variant(resize: '500x500') if message.image.attached? %>
       </div>
       <div class="comments_info">
-        <%= message.user.name %>
+        <%= link_to message.user.name, user_path(message.user.id), class: "list_user"%>
         <%= message.created_at %>
       </div>
     <% end %>
