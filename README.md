@@ -54,11 +54,24 @@
 <br><br>
 
 # DEMO
+- 掲示板の新規作成
+  https://gyazo.com/aadaacd26ad75bd2b8bf39127162cfb8
+- 掲示板へのコメント投稿
+  https://gyazo.com/026ebe9043f14003f6e822dfb592ee3b
+- 写真投稿
+  https://gyazo.com/affb3559b6e0cb42af6db9c250633a3d
+- 掲示板検索
+  https://gyazo.com/7886b3b13afcbeda87f8334dff68f5cc
+- アカウント検索・ユーザーページ表示
+  https://gyazo.com/59236e7e9c8ecbffa3c49376721bf39c
+<br><br>
+
 
 # 工夫した点
 - 自分が作成した掲示板をリスト化
 - 自分がコメントした掲示板のリスト化
 - 掲示板作成順だけでなく掲示板更新順にリスト化
+- エラー文の日本語化およびアプリ時間の日本時間化
 <br><br>
 
 # 開発環境・使用技術
